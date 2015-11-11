@@ -4,6 +4,9 @@ public class Fraction {
 
     public int d, n;
 
+    Fraction(){
+
+    }
 
     public String toString(){
 
@@ -12,36 +15,53 @@ public class Fraction {
     }
     public static boolean equals(Fraction first, Fraction second){
 
-        /*
-        *
-        * Cashing variables
-        *
-        * */
-        int delFirst = first.d;
-        int delSecond = second.d;
+        // Cashing variables
+
         int numFirst = first.n;
         int numSecond = second.n;
 
-        /*
-        *
-        * Mutual for Fractions
-        *
-        * */
-        int mutual = delFirst * delSecond;
 
-        int multyplierFirst = getMultyplierForNum(delFirst, mutual);
-        int multyplierSecond = getMultyplierForNum(delSecond, mutual);
+        // Mutual for Fractions
 
-        /*
-        *
-        * Compare do there
-        *
-        * */
+        int mutual = getMutual(first, second);
+
+        int multyplierFirst = getMultyplierForNum(first.d, mutual);
+        int multyplierSecond = getMultyplierForNum(second.d, mutual);
+
+        // compare
 
         return numFirst * multyplierFirst == numSecond * multyplierSecond;
 
 
     }
+
+    /*
+    *
+    * Params: Fractions objects
+    * return @object
+    *
+    * */
+    public static Fraction multiply(Fraction first, Fraction second){
+
+        int multipliedDel;
+        int multipliedNum;
+
+        multipliedDel = first.n * second.d;
+        multipliedNum = first.d * second.n;
+
+        return new Fraction(multipliedNum, multipliedDel);
+    }
+
+    /*
+    * params delimiters
+    *
+    * return @int
+    *
+    * */
+    private static int getMutual(Fraction first, Fraction second){
+        return first.d * second.d;
+    }
+
 
     /*
     *
