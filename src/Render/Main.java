@@ -11,13 +11,13 @@ public class Main {
 
     public static void main(String[] args){
 
-        Fraction a = new Fraction();
-        Fraction b = new Fraction();
+        Fraction a = new Fraction(4, 2);
+        Fraction b = new Fraction(4, 2);
 
-        a.n = 4; a.d = 2;
-        b.n = 4; b.d = 2;
 
         System.out.println(Fraction.equals(a, b));
+        System.out.println(Fraction.division(a, b));
+        System.out.println(Fraction.multiply(a, b));
     }
 
 }

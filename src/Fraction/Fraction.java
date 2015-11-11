@@ -4,7 +4,11 @@ public class Fraction {
 
     public int d, n;
 
-    Fraction(){
+    public Fraction(int delimeter, int numerable){
+
+        d = delimeter;
+
+        n = numerable;
 
     }
 
@@ -35,10 +39,30 @@ public class Fraction {
 
     }
 
+
+    /*
+    *
+    * Two fractions division
+    *
+    * return @Fraction
+    *
+    * */
+
+    public static Fraction division(Fraction first, Fraction second){
+
+        int dividedDel;
+        int dividedNum;
+
+        dividedNum = first.n * second.d;
+        dividedDel = first.d * second.n;
+
+        return new Fraction(dividedNum, dividedDel);
+    }
     /*
     *
     * Params: Fractions objects
-    * return @object
+    *
+    * return @Fraction
     *
     * */
     public static Fraction multiply(Fraction first, Fraction second){
@@ -46,8 +70,8 @@ public class Fraction {
         int multipliedDel;
         int multipliedNum;
 
-        multipliedDel = first.n * second.d;
-        multipliedNum = first.d * second.n;
+        multipliedNum = first.n * second.n;
+        multipliedDel = first.d * second.d;
 
         return new Fraction(multipliedNum, multipliedDel);
     }
